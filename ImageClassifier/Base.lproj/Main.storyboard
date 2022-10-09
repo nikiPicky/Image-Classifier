@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainController" customModule="ImageClassifier" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B0J-LM-M3O">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="Fhi-vg-5iR" userLabel="Prediction View">
+                                <rect key="frame" x="160.33333333333337" y="72" width="209.66666666666663" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Predictions go here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahO-Qu-YUI" userLabel="Prediction Label">
+                                        <rect key="frame" x="20" y="20" width="169.66666666666666" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98186905689265258" green="0.98640179266948946" blue="1" alpha="0.34576955782312924" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="ahO-Qu-YUI" firstAttribute="leading" secondItem="Fhi-vg-5iR" secondAttribute="leading" constant="20" symbolic="YES" id="Hka-i1-KMR"/>
+                                    <constraint firstAttribute="bottom" secondItem="ahO-Qu-YUI" secondAttribute="bottom" constant="20" symbolic="YES" id="jSK-X1-e1e"/>
+                                    <constraint firstAttribute="trailing" secondItem="ahO-Qu-YUI" secondAttribute="trailing" constant="20" symbolic="YES" id="oF9-Hf-XUr"/>
+                                    <constraint firstItem="ahO-Qu-YUI" firstAttribute="top" secondItem="Fhi-vg-5iR" secondAttribute="top" constant="20" symbolic="YES" id="zif-tb-sYF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdr-Ri-rRg">
+                                <rect key="frame" x="115.33333333333333" y="725" width="159.66666666666669" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="0.34914434523809523" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="   Choose Image   ">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="chooseImageFunc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xkr-gk-uob"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pdr-Ri-rRg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1e6-6o-Wah"/>
+                            <constraint firstAttribute="trailing" secondItem="B0J-LM-M3O" secondAttribute="trailing" id="90F-Wc-OiS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pdr-Ri-rRg" secondAttribute="bottom" constant="50" id="AsA-hg-wxX"/>
+                            <constraint firstAttribute="bottom" secondItem="B0J-LM-M3O" secondAttribute="bottom" id="BeK-5Z-pam"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fhi-vg-5iR" secondAttribute="trailing" constant="20" id="EIJ-2G-9J2"/>
+                            <constraint firstItem="Fhi-vg-5iR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Edi-cM-k2u"/>
+                            <constraint firstItem="B0J-LM-M3O" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QUN-8B-Yka"/>
+                            <constraint firstItem="B0J-LM-M3O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="To1-AK-dln"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonChoose" destination="Pdr-Ri-rRg" id="MnN-IV-4TP"/>
+                        <outlet property="imageView" destination="B0J-LM-M3O" id="iqV-zt-jui"/>
+                        <outlet property="labelPrediction" destination="ahO-Qu-YUI" id="Jkr-k0-A8p"/>
+                        <outlet property="viewPrediction" destination="Fhi-vg-5iR" id="hd9-6r-EjQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
